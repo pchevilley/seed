@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import './theme.scss';
+
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+app-root{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.filler{
+    flex: 1;
+}
+
+md-toolbar{
+    padding-right: 0px!important;
+    padding-left: 0px!important;
+
+    button{
+        height: 100%;
+    }
+}
