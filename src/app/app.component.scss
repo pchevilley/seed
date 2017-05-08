@@ -1,10 +1,7 @@
-md-toolbar{
-    .toggle-menu{
-        margin-right: 5px;
-        min-width: 64px;
-    }
-}
-
 md-sidenav-container{
     flex: 1;
+
+    md-sidenav{
+        box-shadow: 2px 0px 4px rgba(0,0,0,0.3);
+    }
 }

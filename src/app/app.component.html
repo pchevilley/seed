@@ -1,14 +1,7 @@
-<md-toolbar color="primary">
-  <button md-button class="toggle-menu" (click)="sidenav.toggle()">
-    <md-icon>menu</md-icon>    
-  </button>
-  <span>My profile</span>
-  <div class="filler"></div>
-  <button md-button>Login</button>
-</md-toolbar>
+<navbar [sidenav]="sidenav"></navbar>
 
 <md-sidenav-container>
-  <md-sidenav #sidenav mode="side" opened="true">
+  <md-sidenav #sidenav mode="side" opened="false">
 
     <md-list>
       <h3 md-subheader>Folders</h3>
@@ -31,5 +24,3 @@
   <router-outlet></router-outlet>
 
 </md-sidenav-container>
-
-<splash-screen></splash-screen>

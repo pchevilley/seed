@@ -17,6 +17,13 @@ app-root{
 .filler{
     flex: 1;
 }
+.flex-line{
+    display: flex;
+
+    & > *{
+        flex: 1;
+    }
+}
 
 md-toolbar{
     padding-right: 0px!important;
@@ -25,4 +32,11 @@ md-toolbar{
     button{
         height: 100%;
     }
+}
+
+@keyframes denied {
+    0%   {left: 0px;}
+    25%  {left: -5px;}
+    75%  {left: 5px;}
+    100% {left: 0px;}
 }

@@ -1,0 +1,10 @@
+<md-toolbar color="primary">
+  <button *ngIf="currentUser" md-button class="toggle-menu" (click)="sidenav.toggle()">
+    <md-icon>menu</md-icon>    
+  </button>
+  <span class="title">My profile</span>
+  <div class="filler"></div>
+  <button  *ngIf="!currentUser" md-button routerLink="/register" routerLinkActive="active" >Register</button>
+  <button  *ngIf="!currentUser" md-button routerLink="/login" routerLinkActive="active" >Login</button>
+  <button  *ngIf="currentUser" md-button (click)="logout()" >Logout</button>
+</md-toolbar>

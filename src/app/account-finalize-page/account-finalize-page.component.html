@@ -1,0 +1,46 @@
+<div class="header">
+  <h1>Welcome to :AppName!</h1>
+  <h3>Follow these steps to finalize your account creation</h3>
+</div>
+<div class="content">
+  <md-card class="finalize-card">
+    <md-progress-bar mode="determinate" color="primary" [value]="progress"></md-progress-bar>
+    <form #loginForm="ngForm" *ngIf="currentStep === 'basic'">
+
+      <div class="flex-line">
+        <md-input-container dividerColor="accent">
+          <input type="text" mdInput placeholder="First name" name="first-name" required [(ngModel)]="first_name">
+        </md-input-container>
+
+        <md-input-container dividerColor="accent" class="last-name">
+          <input type="text" mdInput placeholder="Last name" required  name="last-name" [(ngModel)]="last_name">
+        </md-input-container>
+      </div>
+
+      <md-input-container dividerColor="accent">
+        <!--<input type="text" mdInput placeholder="Address" required  name="address" [(ngModel)]="address">-->
+        <input 
+          mdInput
+          name="address"
+          placeholder="Address" 
+          autocorrect="off" 
+          autocapitalize="off" 
+          spellcheck="off" 
+          type="text" 
+          class="form-control" 
+          #search 
+          [formControl]="searchControl">
+      </md-input-container>
+
+      <md-input-container dividerColor="accent">
+        <input type="tel" mdInput placeholder="Phone" required  name="phone" [(ngModel)]="phone">
+      </md-input-container>      
+
+    </form>
+
+    <md-card-actions align="end">
+      <button md-raised-button color="accent" (click)="increaseProgress()">Next</button>
+    </md-card-actions>
+  </md-card>
+  
+</div>

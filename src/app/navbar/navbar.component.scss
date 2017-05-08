@@ -1,0 +1,12 @@
+md-toolbar{
+    position: relative;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+
+    .toggle-menu{
+        min-width: 64px;
+    }
+    .title{
+        margin-left: 16px;
+    }
+}

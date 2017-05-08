@@ -1,0 +1,18 @@
+<p>
+  An email containing a code has been sent to your email. Please enter this code to activate your account.
+</p>
+
+<form (ngSubmit)="activate()" #registerForm="ngForm">
+  <md-input-container dividerColor="accent" *ngIf="!email">
+    <input type="text" mdInput placeholder="Email" name="account-email" required [(ngModel)]="email">
+  </md-input-container>
+
+  <md-input-container dividerColor="accent">
+    <input type="text" mdInput placeholder="Code" name="account-code" required [(ngModel)]="code">
+  </md-input-container>
+
+  <button md-raised-button type="submit" color="accent" [disabled]="!registerForm.form.valid || loading">
+    <span *ngIf="!loading">Activate</span>
+    <md-spinner *ngIf="loading"></md-spinner>
+  </button>
+</form>

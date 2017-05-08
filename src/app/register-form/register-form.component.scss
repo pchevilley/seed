@@ -17,7 +17,7 @@
     }
 
 
-    .login-icon{
+    .register-icon{
         text-align: center;
         md-icon{
             font-size: 10em;
@@ -26,11 +26,13 @@
         }
     }
 
-    .not-a-member{
+    .already-a-member,
+    .have-a-code{
         text-align: center;
         margin-top: 15px;
         font-size: .9em;
-    }    
+        cursor: pointer;
+    }
 
     md-spinner{
         height: 80%;

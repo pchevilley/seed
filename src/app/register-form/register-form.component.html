@@ -1,0 +1,31 @@
+<md-card [class.denied]="triggerAnimation">
+  <div class="register-icon">
+    <md-icon>account_circle</md-icon>
+  </div>
+
+  <form (ngSubmit)="register()" #registerForm="ngForm" *ngIf="!validate">
+
+    <md-input-container dividerColor="accent">
+      <input type="text" mdInput placeholder="E-mail" name="account-email" required [(ngModel)]="email">
+    </md-input-container>
+
+    <md-input-container dividerColor="accent">
+      <input type="password" mdInput placeholder="Password" required name="account-password" [(ngModel)]="password">
+    </md-input-container>
+
+    <md-input-container dividerColor="accent">
+      <input type="password" mdInput placeholder="Verify password" required name="account-password" [(ngModel)]="password2">
+    </md-input-container>
+
+    <button md-raised-button type="submit" color="accent" [disabled]="!registerForm.form.valid || loading">
+      <span *ngIf="!loading">Register</span>
+      <md-spinner *ngIf="loading"></md-spinner>
+    </button>
+
+    <a class="have-a-code" (click)="validate=true">I have a code</a>
+    <a routerLink="/login" class="already-a-member">Already a member?</a>
+  </form>
+
+  <register-activation-form *ngIf="validate" [email]="email"></register-activation-form>
+
+</md-card>

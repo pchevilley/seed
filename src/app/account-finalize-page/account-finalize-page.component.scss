@@ -1,0 +1,33 @@
+@import '../../theme.scss';
+
+.finalize-card{
+    max-width: 600px;
+    width: 80%;
+    margin: auto;
+
+    md-progress-bar{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+.header{
+    background-color: mat-color($primary);
+    padding: 20px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+
+    md-input-container{
+        font-size: 20px;
+    }
+}
+
+.last-name{
+    margin-left: 20px;
+}

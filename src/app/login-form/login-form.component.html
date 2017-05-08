@@ -1,18 +1,22 @@
-<md-card>
+<md-card [class.denied]="triggerAnimation">
+  <div class="login-icon">
+    <md-icon>account_circle</md-icon>
+  </div>
 
-<form action="">
-  <md-input-container dividerColor="accent">
-    <input type="text" mdInput placeholder="E-mail">
-  </md-input-container>
+  <form (ngSubmit)="onLoginClicked()" #loginForm="ngForm">
+    <md-input-container dividerColor="accent">
+      <input type="text" mdInput placeholder="E-mail" name="login-email" required [(ngModel)]="email">
+    </md-input-container>
 
-  <md-input-container dividerColor="accent">
-    <input type="password" mdInput placeholder="Password">
-  </md-input-container>
+    <md-input-container dividerColor="accent">
+      <input type="password" mdInput placeholder="Password" required  name="login-password" [(ngModel)]="password">
+    </md-input-container>
 
-  <button md-raised-button type="submit" color="accent" (click)="onLoginClicked()">
-    Login
-  </button>
-</form>
+    <button md-raised-button type="submit" color="accent" [disabled]="!loginForm.form.valid || loggingIn">
+        <span *ngIf="!loggingIn">Login</span>
+        <md-spinner *ngIf="loggingIn"></md-spinner>
+    </button>
 
-
+    <a routerLink="/register" class="not-a-member">Not a member yet?</a>
+  </form>
 </md-card>
